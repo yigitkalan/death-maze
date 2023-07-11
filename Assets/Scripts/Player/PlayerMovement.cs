@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using DG.Tweening;
 using UniRx;
 using UnityEngine;
 
@@ -12,13 +14,23 @@ public class PlayerMovement : MonoBehaviour
 	private float moveSpeed = 4;
 	Vector3 movementVector;
 
+	[SerializeField]
+	float dashTime = 0.4f;
+
+	[SerializeField]
+	float dashForce = 8;
+
+	[SerializeField]
+	float dashReload = 1;
+
 	[Header("Aim")]
 	[SerializeField]
-	float aimSmoothTime = 0.1f;
+	float aimSmoothTime = 8;
 
 	Vector3 aimVector;
 
 	IDisposable movementDisposable;
+	private bool canDash = true;
 
 	private void Awake()
 	{
@@ -84,5 +96,24 @@ public class PlayerMovement : MonoBehaviour
 				aimSmoothTime * Time.deltaTime
 			);
 		}
+	}
+
+	public void _Dash()
+	{
+		if (!canDash)
+		{
+			return;
+		}
+		StartCoroutine(nameof(Dash));
+	}
+
+	IEnumerator Dash()
+	{
+		canDash = false;
+		rb.AddForce(movementVector.normalized * dashForce, ForceMode.Impulse);
+		yield return new WaitForSeconds(dashTime);
+		rb.velocity = Vector3.zero;
+		yield return new WaitForSeconds(dashReload);
+		canDash = true;
 	}
 }

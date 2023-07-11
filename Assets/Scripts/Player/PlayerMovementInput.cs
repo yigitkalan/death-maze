@@ -5,7 +5,7 @@ using Lean.Gui;
 using UniRx;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerMovementInput : MonoBehaviour
 {
 	[SerializeField]
 	LeanJoystick moveJoystick;
@@ -14,6 +14,17 @@ public class PlayerInput : MonoBehaviour
 	[SerializeField]
 	LeanJoystick aimJoystick;
 	public Vector2 aimInput { get; private set; }
+
+	private void Awake()
+	{
+		moveJoystick = GameObject
+			.FindGameObjectWithTag("MovementJoystick")
+			.GetComponent<LeanJoystick>();
+
+		aimJoystick = GameObject
+			.FindGameObjectWithTag("AimJoystick")
+			.GetComponent<LeanJoystick>();
+	}
 
 	// Start is called before the first frame update
 	void Start()

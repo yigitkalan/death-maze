@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	PlayerInput _playerInput;
+	PlayerMovementInput _playerInput;
 	Rigidbody rb;
 
 	[Header("Movement")]
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody>();
-		_playerInput = GetComponent<PlayerInput>();
+		_playerInput = GetComponent<PlayerMovementInput>();
 	}
 
 	void Start()

@@ -29,6 +29,12 @@ public class BotMovement : MonoBehaviour
 		_player = FindAnyObjectByType<PlayerMovementInput>().transform;
 	}
 
+	void OnDisable()
+	{
+		movementDisposable.Dispose();
+		lookTween.Kill();
+	}
+
 	void Start()
 	{
 		movementDisposable = Observable
@@ -42,7 +48,7 @@ public class BotMovement : MonoBehaviour
 						GotoNextPoint();
 					}
 				}
-				else
+				else if (!GameManager.Instance.isPlayerDead)
 				{
 					if (!chaseStarted)
 					{
@@ -71,12 +77,6 @@ public class BotMovement : MonoBehaviour
 	{
 		lookTween.Kill();
 		lookTween = transform.DOLookAt(_player.position, 0.1f);
-	}
-
-	private void OnDisable()
-	{
-		lookTween.Kill();
-		movementDisposable.Dispose();
 	}
 
 	void GotoNextPoint()

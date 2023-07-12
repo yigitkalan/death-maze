@@ -22,7 +22,9 @@ public class BotShooting : MonoBehaviour
 
 		shootDisposable = Observable
 			.EveryUpdate()
-			.Where(_ => PlayerInRange() && !_botMovement.onPatrol)
+			.Where(
+				_ => !GameManager.Instance.isPlayerDead && PlayerInRange() && !_botMovement.onPatrol
+			)
 			.Subscribe(_ => ShootPlayer());
 	}
 

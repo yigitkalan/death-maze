@@ -18,6 +18,8 @@ public class BotSight : MonoBehaviour
 	public Color patrolColor { get; private set; } = new Color(1, 0.98f, 0.47f);
 	public Color chaseColor { get; private set; } = Color.red;
 
+	Tween lightTween;
+
 	[SerializeField]
 	LayerMask wallLayers;
 
@@ -35,7 +37,7 @@ public class BotSight : MonoBehaviour
 
 		sightDisposable = Observable
 			.EveryUpdate()
-			.Where(_ => timeLeftToFocusPlayer > 0)
+			.Where(_ => !GameManager.Instance.isPlayerDead && timeLeftToFocusPlayer > 0)
 			.Subscribe(_ =>
 			{
 				if (CanSeePlayer())
@@ -66,6 +68,7 @@ public class BotSight : MonoBehaviour
 	private void OnDisable()
 	{
 		sightDisposable.Dispose();
+		lightTween.Kill();
 	}
 
 	public bool CanSeePlayer()
@@ -98,7 +101,9 @@ public class BotSight : MonoBehaviour
 
 	public void ChangeLightColor(Color color)
 	{
-		sightLight.DOColor(color, initialTimeLeftToFocusPlayer).SetEase(Ease.InOutSine);
+		lightTween = sightLight
+			.DOColor(color, initialTimeLeftToFocusPlayer)
+			.SetEase(Ease.InOutSine);
 	}
 
 	private void OnDrawGizmos()

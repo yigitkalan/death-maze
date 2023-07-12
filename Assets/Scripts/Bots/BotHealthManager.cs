@@ -18,7 +18,6 @@ public class BotHealthManager : MonoBehaviour, ICanTakeDamage
 
 	public void TakeDamage(int damage)
 	{
-		print("taking damage");
 		currentHealth -= damage;
 		if (currentHealth <= 0)
 		{

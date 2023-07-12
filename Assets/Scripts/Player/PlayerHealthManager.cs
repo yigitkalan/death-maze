@@ -13,12 +13,12 @@ public class PlayerHealthManager : MonoBehaviour, ICanTakeDamage
 
 	public void Die()
 	{
+		GameManager.Instance.isPlayerDead = true;
 		Destroy(gameObject);
 	}
 
 	public void TakeDamage(int damage)
 	{
-		print("taking damage");
 		currentHealth -= damage;
 		if (currentHealth <= 0)
 		{

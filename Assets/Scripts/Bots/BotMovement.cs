@@ -1,38 +1,76 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UniRx;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class BotMovement : MonoBehaviour
 {
+	NavMeshAgent _agent;
+	Transform _player;
+
+	[Header("Chasing")]
+	[SerializeField]
+	float chaseSpeed = 4;
+	Tween lookTween;
+	bool chaseStarted = false;
+
+	[Header("Patrol")]
 	[SerializeField]
 	Transform[] patrolPoints;
-	int targetPointIndex;
-
-	NavMeshAgent agent;
+	int targetPointIndex = 0;
+	public bool onPatrol = true;
 
 	IDisposable movementDisposable;
 
 	private void Awake()
 	{
-		agent = GetComponent<NavMeshAgent>();
+		_agent = GetComponent<NavMeshAgent>();
+		_player = FindAnyObjectByType<PlayerMovementInput>().transform;
 	}
 
 	void Start()
 	{
 		movementDisposable = Observable
 			.EveryUpdate()
-			.Where(
-				_ =>
-					agent.remainingDistance < agent.stoppingDistance
-					&& !agent.pathPending
-			)
 			.Subscribe(_ =>
 			{
-				GotoNextPoint();
+				if (onPatrol)
+				{
+					if (_agent.remainingDistance < _agent.stoppingDistance && !_agent.pathPending)
+					{
+						GotoNextPoint();
+					}
+				}
+				else
+				{
+					if (!chaseStarted)
+					{
+						SetChaseSettings();
+					}
+					ChasePlayer();
+				}
 			});
+	}
+
+	private void ChasePlayer()
+	{
+		_agent.SetDestination(_player.position);
+		RotateTowardsPlayer();
+	}
+
+	void SetChaseSettings()
+	{
+		_agent.stoppingDistance = 6;
+		_agent.speed = chaseSpeed;
+		chaseStarted = true;
+		StartAllBotsChasing();
+	}
+
+	void RotateTowardsPlayer()
+	{
+		lookTween.Kill();
+		lookTween = transform.DOLookAt(_player.position, 0.1f);
 	}
 
 	private void OnDisable()
@@ -47,10 +85,24 @@ public class BotMovement : MonoBehaviour
 			return;
 
 		// Set the agent to go to the currently selected destination.
-		agent.destination = patrolPoints[targetPointIndex].position;
+		_agent.destination = patrolPoints[targetPointIndex].position;
 
 		// Choose the next point in the array as the destination,
 		// cycling to the start if necessary.
 		targetPointIndex = (targetPointIndex + 1) % patrolPoints.Length;
+	}
+
+	void StartAllBotsChasing()
+	{
+		var bots = FindObjectsOfType<BotMovement>();
+		foreach (var bot in bots)
+		{
+			bot.onPatrol = false;
+		}
+		BotSight[] sights = FindObjectsOfType<BotSight>();
+		foreach (var sight in sights)
+		{
+			sight.ChangeLightColor(sight.chaseColor);
+		}
 	}
 }

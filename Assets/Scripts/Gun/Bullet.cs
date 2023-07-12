@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-	public int bulletDamage = 1;
+	private int defaultBulletDamage = 1;
 
 	private void OnCollisionEnter(Collision other)
 	{
+		ICanTakeDamage canTakeDamage =
+			other.gameObject.GetComponent<ICanTakeDamage>();
 		// if collided object has ICanTakeDamage interface
-		if (other.gameObject.GetComponent<ICanTakeDamage>() != null)
+		if (canTakeDamage != null)
 		{
-			other.gameObject
-				.GetComponent<ICanTakeDamage>()
-				.TakeDamage(bulletDamage);
+			canTakeDamage.TakeDamage(defaultBulletDamage);
 		}
+	}
+
+	public void SetBulletDamage(int _bulletDamage)
+	{
+		defaultBulletDamage = _bulletDamage;
 	}
 }

@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
 	Vector3 aimVector;
 
 	IDisposable movementDisposable;
-	private bool canDash = true;
 
 	private void Awake()
 	{

@@ -15,9 +15,6 @@ public class PlayerMovementInput : MonoBehaviour
 	LeanJoystick aimJoystick;
 	public Vector2 aimInput { get; private set; }
 
-	[SerializeField]
-	public LeanButton dashButton { get; set; }
-
 	private void Awake()
 	{
 		moveJoystick = GameObject

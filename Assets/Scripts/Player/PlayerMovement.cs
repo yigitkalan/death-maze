@@ -14,15 +14,6 @@ public class PlayerMovement : MonoBehaviour
 	private float moveSpeed = 4;
 	Vector3 movementVector;
 
-	[SerializeField]
-	float dashTime = 0.4f;
-
-	[SerializeField]
-	float dashForce = 8;
-
-	[SerializeField]
-	float dashReload = 1;
-
 	[Header("Aim")]
 	[SerializeField]
 	float aimSmoothTime = 8;
@@ -96,24 +87,5 @@ public class PlayerMovement : MonoBehaviour
 				aimSmoothTime * Time.deltaTime
 			);
 		}
-	}
-
-	public void _Dash()
-	{
-		if (!canDash)
-		{
-			return;
-		}
-		StartCoroutine(nameof(Dash));
-	}
-
-	IEnumerator Dash()
-	{
-		canDash = false;
-		rb.AddForce(movementVector.normalized * dashForce, ForceMode.Impulse);
-		yield return new WaitForSeconds(dashTime);
-		rb.velocity = Vector3.zero;
-		yield return new WaitForSeconds(dashReload);
-		canDash = true;
 	}
 }

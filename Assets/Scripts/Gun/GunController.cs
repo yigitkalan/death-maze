@@ -18,9 +18,6 @@ public class GunController : MonoBehaviour
 	float bulletLife = 0.5f;
 	float nextTimeToFire = 0;
 
-	void Start() { }
-
-	// Update is called once per frame
 	public void Shoot()
 	{
 		if (!CanShoot())

@@ -14,6 +14,8 @@ public class GunController : MonoBehaviour
 	[SerializeField]
 	float fireRate = 0.5f;
 
+	[SerializeField]
+	float bulletLife = 0.5f;
 	float nextTimeToFire = 0;
 
 	void Start() { }
@@ -32,7 +34,7 @@ public class GunController : MonoBehaviour
 		);
 		bullet.GetComponent<Rigidbody>().velocity =
 			transform.forward * bulletSpeed;
-		Destroy(bullet, 1);
+		Destroy(bullet, bulletLife);
 	}
 
 	public bool CanShoot()

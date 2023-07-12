@@ -4,9 +4,9 @@ public class Bullet : MonoBehaviour
 {
 	private int defaultBulletDamage = 1;
 
-	private void OnCollisionEnter(Collision other)
+	private void OnTriggerEnter(Collider other)
 	{
-		ICanTakeDamage canTakeDamage = other.gameObject.GetComponent<ICanTakeDamage>();
+		ICanTakeDamage canTakeDamage = other.gameObject.GetComponentInParent<ICanTakeDamage>();
 		if (canTakeDamage != null)
 		{
 			canTakeDamage.TakeDamage(defaultBulletDamage);

@@ -4,6 +4,12 @@ public class PlayerHealthManager : MonoBehaviour, ICanTakeDamage
 {
 	[SerializeField]
 	int maxHealth = 5;
+	int currentHealth;
+
+	private void Start()
+	{
+		currentHealth = maxHealth;
+	}
 
 	public void Die()
 	{
@@ -12,8 +18,9 @@ public class PlayerHealthManager : MonoBehaviour, ICanTakeDamage
 
 	public void TakeDamage(int damage)
 	{
-		maxHealth -= damage;
-		if (maxHealth <= 0)
+		print("taking damage");
+		currentHealth -= damage;
+		if (currentHealth <= 0)
 		{
 			Die();
 		}

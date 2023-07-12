@@ -68,7 +68,7 @@ public class BotSight : MonoBehaviour
 		sightDisposable.Dispose();
 	}
 
-	bool CanSeePlayer()
+	public bool CanSeePlayer()
 	{
 		if (Vector3.Distance(transform.position, _player.position) < viewDistance)
 		{

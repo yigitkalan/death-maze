@@ -27,13 +27,8 @@ public class GunController : MonoBehaviour
 		{
 			return;
 		}
-		GameObject bullet = Instantiate(
-			bulletPrefab,
-			shootPoint.position,
-			transform.rotation
-		);
-		bullet.GetComponent<Rigidbody>().velocity =
-			transform.forward * bulletSpeed;
+		GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, transform.rotation);
+		bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
 		bullet.GetComponent<Bullet>().SetBulletDamage(gunDamage);
 		Destroy(bullet, bulletLife);
 	}

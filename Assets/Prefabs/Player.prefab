@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2032557966953025723}
   - component: {fileID: 5621386603886546340}
   - component: {fileID: 18021726122559878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,11 +116,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3621889076217523031}
   - component: {fileID: 6289188776524628460}
-  - component: {fileID: 3360810966647861415}
   - component: {fileID: 273952773223816066}
-  m_Layer: 0
+  - component: {fileID: 3535576627518012279}
+  - component: {fileID: -7799711176230524896}
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,20 +171,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &3360810966647861415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836635631150577068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfb2f7400c2773d49ae1f1e8d44474cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveJoystick: {fileID: 0}
-  aimJoystick: {fileID: 0}
 --- !u!114 &273952773223816066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +183,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61056579d7731e5459861f3ffaa5d587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  aimSmoothTime: 6
+  moveSpeed: 6
+  aimSmoothTime: 8
+--- !u!114 &3535576627518012279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836635631150577068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fec4a4b8ba4b40429f2b3aa836daa49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveJoystick: {fileID: 0}
+  aimJoystick: {fileID: 0}
+--- !u!114 &-7799711176230524896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836635631150577068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9732ff1d9a0bef94f952859bacbf43ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
 --- !u!1 &1808944697035557236
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2044352098596934414}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +258,7 @@ GameObject:
   - component: {fileID: 4967221295594959096}
   - component: {fileID: 1741163759029681886}
   - component: {fileID: 8601358801271198842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8560388095114609298}
   - component: {fileID: 8349054456625598546}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +418,7 @@ GameObject:
   - component: {fileID: 2368585262884495834}
   - component: {fileID: 3912662867618587307}
   - component: {fileID: 4021851164102211209}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +523,7 @@ GameObject:
   - component: {fileID: 4253374964517819470}
   - component: {fileID: 2740278376596112285}
   - component: {fileID: 4671621981921066309}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eye (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +628,7 @@ GameObject:
   - component: {fileID: 2934039257704851522}
   - component: {fileID: 3948231922835612060}
   - component: {fileID: 322282953627185154}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,9 +752,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4256684993851300387, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580156151381640212, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8378204976524305167, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
       propertyPath: m_Name
       value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378204976524305167, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932074202826940277, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932074202826940277, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033326851936811616, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -618,31 +618,12 @@ Transform:
   m_Father: {fileID: 522241191}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &341860467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 836635631150577068, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-  m_PrefabInstance: {fileID: 4760853756759987144}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &341860472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341860467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fec4a4b8ba4b40429f2b3aa836daa49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveJoystick: {fileID: 0}
-  aimJoystick: {fileID: 0}
 --- !u!114 &341860474 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 273952773223816066, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
   m_PrefabInstance: {fileID: 4760853756759987144}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341860467}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61056579d7731e5459861f3ffaa5d587, type: 3}
@@ -980,17 +961,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86129609dc5e55040af7b534926a4b9f, type: 3}
---- !u!114 &549841786 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1302898374854187461, guid: 6cbadf2ff063a544d95871bebdaf24a7, type: 3}
-  m_PrefabInstance: {fileID: 6786064076613869585}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c039d02e653dbb746abea71ba5c14eae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &570737788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2609,17 +2579,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2044352098596934414, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
   m_PrefabInstance: {fileID: 4760853756759987144}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1651751691 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8131420032355977215, guid: 6cbadf2ff063a544d95871bebdaf24a7, type: 3}
-  m_PrefabInstance: {fileID: 6786064076613869585}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c039d02e653dbb746abea71ba5c14eae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1660776452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,42 +3805,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 273952773223816066, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: dashTime
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 273952773223816066, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: dashForce
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 273952773223816066, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: dashSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 273952773223816066, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: moveSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 273952773223816066, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: aimSmoothTime
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 836635631150577068, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 836635631150577068, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3360810966647861415, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: aimJoystick
-      value: 
-      objectReference: {fileID: 1651751691}
-    - target: {fileID: 3360810966647861415, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: moveJoystick
-      value: 
-      objectReference: {fileID: 549841786}
     - target: {fileID: 3621889076217523031, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3926,30 +3853,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3656288758130891566, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: fireRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3656288758130891566, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: bulletSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532620292643036379, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8601440589317791550, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3360810966647861415, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
+    - {fileID: 4532620292643036379, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
+    - {fileID: 8601440589317791550, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 836635631150577068, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 341860472}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce6460b78f3fa5744922ae1fa87f3487, type: 3}
 --- !u!1001 &6786064076613869585
 PrefabInstance:

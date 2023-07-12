@@ -42,7 +42,6 @@ public class BotMovement : MonoBehaviour
 
 	void GotoNextPoint()
 	{
-		print("GotoNextPoint");
 		// Returns if no points have been set up
 		if (patrolPoints.Length == 0)
 			return;

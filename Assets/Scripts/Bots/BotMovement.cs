@@ -75,6 +75,7 @@ public class BotMovement : MonoBehaviour
 
 	private void OnDisable()
 	{
+		lookTween.Kill();
 		movementDisposable.Dispose();
 	}
 

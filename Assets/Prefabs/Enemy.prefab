@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6112849061388790563}
   - component: {fileID: 8410533316199705080}
   - component: {fileID: 2706319474927475396}
+  - component: {fileID: 3491587978314528165}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -122,7 +123,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 287145453
   m_Radius: 1
-  m_Speed: 8
+  m_Speed: 6
   m_Acceleration: 80
   avoidancePriority: 50
   m_AngularSpeed: 240
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2db62285e369e47a4aa7385b97ded3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chaseSpeed: 2
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -172,6 +174,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   initialTimeLeftToFocusPlayer: 0.5
+--- !u!114 &3491587978314528165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3234647739334410163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b539629967bc9842b349a48ac111a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
 --- !u!1 &4675863002180728817
 GameObject:
   m_ObjectHideFlags: 0

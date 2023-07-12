@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -8,13 +6,12 @@ public class Bullet : MonoBehaviour
 
 	private void OnCollisionEnter(Collision other)
 	{
-		ICanTakeDamage canTakeDamage =
-			other.gameObject.GetComponent<ICanTakeDamage>();
-		// if collided object has ICanTakeDamage interface
+		ICanTakeDamage canTakeDamage = other.gameObject.GetComponent<ICanTakeDamage>();
 		if (canTakeDamage != null)
 		{
 			canTakeDamage.TakeDamage(defaultBulletDamage);
 		}
+		Destroy(gameObject);
 	}
 
 	public void SetBulletDamage(int _bulletDamage)

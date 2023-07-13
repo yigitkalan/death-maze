@@ -35,6 +35,7 @@ public class BotShooting : MonoBehaviour
 
 	void ShootPlayer()
 	{
+		//create a backkick tween up there and set autostart to false then play it here
 		_gunController.Shoot();
 	}
 

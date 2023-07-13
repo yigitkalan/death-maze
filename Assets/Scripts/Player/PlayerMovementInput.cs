@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Lean.Gui;
 using UniRx;
 using UnityEngine;
@@ -8,22 +5,23 @@ using UnityEngine;
 public class PlayerMovementInput : MonoBehaviour
 {
 	[SerializeField]
-	LeanJoystick moveJoystick;
+	VariableJoystick moveJoystick;
+
 	public Vector2 movementInput { get; private set; }
 
 	[SerializeField]
-	LeanJoystick aimJoystick;
+	VariableJoystick aimJoystick;
 	public Vector2 aimInput { get; private set; }
 
 	private void Awake()
 	{
 		moveJoystick = GameObject
 			.FindGameObjectWithTag("MovementJoystick")
-			.GetComponent<LeanJoystick>();
+			.GetComponent<VariableJoystick>();
 
 		aimJoystick = GameObject
 			.FindGameObjectWithTag("AimJoystick")
-			.GetComponent<LeanJoystick>();
+			.GetComponent<VariableJoystick>();
 	}
 
 	// Start is called before the first frame update
@@ -34,12 +32,12 @@ public class PlayerMovementInput : MonoBehaviour
 
 	void SetDirections()
 	{
-		movementInput = moveJoystick.ScaledValue;
-		aimInput = aimJoystick.ScaledValue;
+		movementInput = new Vector2(moveJoystick.Horizontal, moveJoystick.Vertical);
+		aimInput = new Vector2(aimJoystick.Horizontal, aimJoystick.Vertical);
 	}
 
 	public bool IsAiming()
 	{
-		return aimJoystick.ScaledValue != Vector2.zero;
+		return aimInput != Vector2.zero;
 	}
 }

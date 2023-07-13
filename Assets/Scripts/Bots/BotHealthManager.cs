@@ -13,6 +13,7 @@ public class BotHealthManager : MonoBehaviour, ICanTakeDamage
 
 	public void Die()
 	{
+		GameManager.Instance.SetRemainingEnemies(GameManager.Instance.remainingEnemiesCount - 1);
 		Destroy(gameObject);
 	}
 

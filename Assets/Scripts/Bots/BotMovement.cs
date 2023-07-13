@@ -12,6 +12,9 @@ public class BotMovement : MonoBehaviour
 	[Header("Chasing")]
 	[SerializeField]
 	float chaseSpeed = 4;
+
+	[SerializeField]
+	float lookDelay = 0.1f;
 	Tween lookTween;
 	bool chaseStarted = false;
 
@@ -69,14 +72,14 @@ public class BotMovement : MonoBehaviour
 	{
 		_agent.stoppingDistance = 6;
 		_agent.speed = chaseSpeed;
-		chaseStarted = true;
 		StartAllBotsChasing();
+		chaseStarted = true;
 	}
 
 	void RotateTowardsPlayer()
 	{
 		lookTween.Kill();
-		lookTween = transform.DOLookAt(_player.position, 0.1f);
+		lookTween = transform.DOLookAt(_player.position, lookDelay);
 	}
 
 	void GotoNextPoint()

@@ -1,16 +1,16 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
-public class GunInput : MonoBehaviour
+public class PlayerGunInput : MonoBehaviour
 {
 	[SerializeField]
 	PlayerMovementInput _playerMovementInput;
 
 	[SerializeField]
 	GunController _gunController;
+
+	IDisposable gunInputDisposable;
 
 	private void Awake()
 	{
@@ -20,10 +20,20 @@ public class GunInput : MonoBehaviour
 			.GetComponent<PlayerMovementInput>();
 	}
 
-	// Start is called before the first frame update
 	void Start()
 	{
-		Observable.EveryUpdate().Subscribe(_ => CheckShoot());
+		gunInputDisposable = Observable
+			.EveryUpdate()
+			.Where(_ => !GameManager.Instance.isPlayerDead)
+			.Subscribe(_ =>
+			{
+				CheckShoot();
+			});
+	}
+
+	private void OnDisable()
+	{
+		gunInputDisposable.Dispose();
 	}
 
 	void CheckShoot()

@@ -6,10 +6,11 @@ public class Bullet : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		ICanTakeDamage canTakeDamage = other.gameObject.GetComponentInParent<ICanTakeDamage>();
-		if (canTakeDamage != null)
+		ICanTakeDamage damageTaker = other.gameObject.GetComponentInParent<ICanTakeDamage>();
+
+		if (damageTaker != null)
 		{
-			canTakeDamage.TakeDamage(defaultBulletDamage);
+			damageTaker.TakeDamage(defaultBulletDamage);
 		}
 		Destroy(gameObject);
 	}

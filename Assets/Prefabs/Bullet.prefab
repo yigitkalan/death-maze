@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7667998943693757748}
   - component: {fileID: 8594785243721524442}
   - component: {fileID: 5236467417562381692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 288510759324074898}
   - component: {fileID: 8163410011951233241}
   - component: {fileID: 7046417497382812933}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,8 +177,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.86
+  m_Height: 3.17
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &8979963580310901663
@@ -192,8 +192,7 @@ GameObject:
   - component: {fileID: 100203514823455236}
   - component: {fileID: 6227134504530366833}
   - component: {fileID: 3605866612079525211}
-  - component: {fileID: 1493754910603092341}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Part (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,26 +264,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1493754910603092341
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8979963580310901663}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

@@ -37,7 +37,12 @@ public class BotSight : MonoBehaviour
 
 		sightDisposable = Observable
 			.EveryUpdate()
-			.Where(_ => !GameManager.Instance.isPlayerDead && timeLeftToFocusPlayer > 0)
+			.Where(
+				_ =>
+					!GameManager.Instance.isPlayerDead
+					&& timeLeftToFocusPlayer > 0
+					&& GetComponent<BotMovement>().onPatrol
+			)
 			.Subscribe(_ =>
 			{
 				if (CanSeePlayer())

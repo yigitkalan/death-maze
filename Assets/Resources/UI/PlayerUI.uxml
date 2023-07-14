@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/bar.uss?fileID=7433441132597879392&amp;guid=dfe6eea1990902644b84d4a60c0c4ae9&amp;type=3#bar" />
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: 6%;">
+        <ui:Button text="||" display-tooltip-when-elided="true" name="pauseb" style="font-size: 54px; -unity-font-style: bold; background-color: rgba(188, 188, 188, 0.3); height: 85px; width: 125px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; left: 20px; top: 17px; position: absolute;" />
+        <ui:ProgressBar value="100" name="hbar" class="unity-progress-bar" style="top: 45px; flex-grow: 0; height: 30px; width: 50%; align-self: flex-end; right: 40px; -unity-background-image-tint-color: rgb(86, 255, 0); background-color: rgba(56, 56, 56, 0); background-image: url(&apos;project://database/Assets/Buttons/PNG/3button_green_middle.png?fileID=2800000&amp;guid=a73ec2992ca135e48987416ecdcdc2c3&amp;type=3#3button_green_middle&apos;); -unity-slice-top: 23;" />
+    </ui:VisualElement>
+</ui:UXML>

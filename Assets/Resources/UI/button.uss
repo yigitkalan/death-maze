@@ -1,0 +1,52 @@
+.button {
+    width: 213px;
+    height: 106px;
+    font-size: 31px;
+    background-image: url('project://database/Assets/Buttons/PNG/29button_blue.png?fileID=2800000&guid=2a941afa0b6b78c4ab83921ab447685b&type=3#29button_blue');
+    background-color: rgba(255, 255, 255, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding-bottom: 27px;
+    color: rgb(0, 0, 0);
+    margin-top: 40px;
+}
+
+.button:hover {
+    width: 213px;
+    height: 106px;
+    font-size: 31px;
+    background-image: url('project://database/Assets/Buttons/PNG/29button_blue.png?fileID=2800000&guid=2a941afa0b6b78c4ab83921ab447685b&type=3#29button_blue');
+    background-color: rgba(255, 255, 255, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding-bottom: 27px;
+    color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgb(204, 204, 204);
+    margin-top: 40px;
+}
+
+.button:active {
+    width: 213px;
+    height: 106px;
+    font-size: 31px;
+    background-image: url('project://database/Assets/Buttons/PNG/29button_blue.png?fileID=2800000&guid=2a941afa0b6b78c4ab83921ab447685b&type=3#29button_blue');
+    background-color: rgba(255, 255, 255, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding-bottom: 27px;
+    color: rgb(255, 255, 255);
+    margin-top: 40px;
+    -unity-background-image-tint-color: rgb(164, 164, 164);
+}

@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/button.uss?fileID=7433441132597879392&amp;guid=710c27531af80a14ca605103e090301a&amp;type=3#button" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgb(85, 101, 103); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-text-align: middle-center; justify-content: center; align-items: center;">
+        <ui:VisualElement style="flex-grow: 1; background-color: rgb(255, 255, 255); position: absolute; width: 60%; height: 35%; border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; align-items: center; justify-content: center; margin-top: 0;">
+            <ui:Label tabindex="-1" text="Main Menu" display-tooltip-when-elided="true" style="position: absolute; top: 21px; font-size: 48px; color: rgb(4, 125, 166); text-overflow: ellipsis;" />
+            <ui:Button text="Start" display-tooltip-when-elided="true" name="startb" class="button" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="quitb" class="button" style="margin-top: 25px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

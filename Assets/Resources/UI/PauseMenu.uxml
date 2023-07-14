@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/button.uss?fileID=7433441132597879392&amp;guid=710c27531af80a14ca605103e090301a&amp;type=3#button" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(55, 55, 55, 0.79); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-text-align: middle-center; justify-content: center; align-items: center;">
+        <ui:Button text="Resume" display-tooltip-when-elided="true" name="resumeb" class="button" />
+        <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="mainb" class="button" style="margin-top: 25px;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -14,6 +14,8 @@
     color: rgb(0, 0, 0);
     margin-top: 40px;
     -unity-background-image-tint-color: rgb(183, 255, 180);
+    -unity-font: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=a29c36692ee2867459b2a433fb006951&type=3#NotInter-Regular');
+    -unity-font-definition: resource('Fonts/Milky Mania SDF');
 }
 
 .button:hover {
@@ -32,6 +34,7 @@
     color: rgb(0, 0, 0);
     -unity-background-image-tint-color: rgb(143, 195, 141);
     margin-top: 40px;
+    -unity-font-definition: resource('Fonts/Milky Mania SDF');
 }
 
 .button:active {
@@ -50,4 +53,5 @@
     color: rgb(255, 255, 255);
     margin-top: 40px;
     -unity-background-image-tint-color: rgb(102, 154, 100);
+    -unity-font-definition: resource('Fonts/Milky Mania SDF');
 }

@@ -12,6 +12,9 @@ public class PlayerGunInput : MonoBehaviour
 	GunController _gunController;
 
 	[SerializeField]
+	AudioSource _audioSource;
+
+	[SerializeField]
 	CameraShake _cameraShake;
 
 	[SerializeField]
@@ -66,6 +69,7 @@ public class PlayerGunInput : MonoBehaviour
 			{
 				PlayerBackFire();
 				GunBackFire();
+				_audioSource.Play();
 			}
 
 			_gunController.Shoot();

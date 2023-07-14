@@ -504,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8932074202826940277, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
       propertyPath: bulletSpeed
-      value: 40
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 9033326851936811616, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
       propertyPath: m_Layer

@@ -34,8 +34,10 @@ public class PlayerMovement : MonoBehaviour
 			.EveryFixedUpdate()
 			.Where(
 				_ =>
-					_playerInput.movementInput != Vector2.zero
-					|| _playerInput.aimInput != Vector2.zero
+					(
+						_playerInput.movementInput != Vector2.zero
+						|| _playerInput.aimInput != Vector2.zero
+					) && !GameManager.Instance.isPlayerDead
 			)
 			.Subscribe(_ =>
 			{
@@ -51,27 +53,16 @@ public class PlayerMovement : MonoBehaviour
 
 	void MovePlayerOnXZ()
 	{
-		movementVector = new Vector3(
-			_playerInput.movementInput.x,
-			0,
-			_playerInput.movementInput.y
-		);
+		movementVector = new Vector3(_playerInput.movementInput.x, 0, _playerInput.movementInput.y);
 
-		transform.Translate(
-			movementVector * moveSpeed * Time.deltaTime,
-			Space.World
-		);
+		transform.Translate(movementVector * moveSpeed * Time.deltaTime, Space.World);
 	}
 
 	void RotatePlayer()
 	{
 		if (_playerInput.IsAiming())
 		{
-			aimVector = new Vector3(
-				_playerInput.aimInput.x,
-				0,
-				_playerInput.aimInput.y
-			);
+			aimVector = new Vector3(_playerInput.aimInput.x, 0, _playerInput.aimInput.y);
 			transform.rotation = Quaternion.Slerp(
 				transform.rotation,
 				Quaternion.LookRotation(aimVector, Vector3.up),

@@ -36,6 +36,7 @@ public class PlayerHealthManager : MonoBehaviour, ICanTakeDamage
 				Destroy(gameObject);
 				_inGameUIController.SetDeathUI();
 			});
+		Destroy(GameManager.Instance);
 	}
 
 	public void TakeDamage(int damage)

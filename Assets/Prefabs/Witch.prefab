@@ -73,7 +73,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 287145453
   m_Radius: 1
-  m_Speed: 6
+  m_Speed: 5
   m_Acceleration: 80
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -137,8 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b539629967bc9842b349a48ac111a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
   _hoodieMesh: {fileID: 4916182535985533389}
+  _cameraShake: {fileID: 0}
+  maxHealth: 2
 --- !u!114 &-7143391629478468617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +357,10 @@ PrefabInstance:
     - target: {fileID: 8378204976524305167, guid: c09ae256ba6112547906cad2e56d4367, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932074202826940277, guid: c09ae256ba6112547906cad2e56d4367, type: 3}
+      propertyPath: bulletSpeed
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

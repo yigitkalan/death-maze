@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UniRx;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class LevelDoorManager : MonoBehaviour
 {
@@ -34,8 +35,14 @@ public class LevelDoorManager : MonoBehaviour
 			.AddTo(this);
 	}
 
+	private void OnEnable()
+	{
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
 	private void OnDisable()
 	{
+		SceneManager.sceneLoaded -= OnSceneLoaded;
 		doorDisposable.Dispose();
 		doorOpenTween.Kill();
 	}
@@ -52,5 +59,10 @@ public class LevelDoorManager : MonoBehaviour
 	{
 		doorOpenTween = transform.DOMoveY(doorOpenYPosition, doorOpenDelay);
 		Destroy(gameObject, doorOpenDelay);
+	}
+
+	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		GameManager.Instance.SetInitialEnemyCount();
 	}
 }

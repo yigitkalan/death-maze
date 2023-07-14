@@ -10,8 +10,15 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
-		Instance = this;
-		remainingEnemiesCount = FindObjectsOfType<BotMovement>().Length;
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(this);
+		}
+		else
+		{
+			Destroy(this);
+		}
 	}
 
 	public void SetRemainingEnemies(int count)
@@ -22,5 +29,10 @@ public class GameManager : MonoBehaviour
 	public void AddPoints(int count)
 	{
 		playerPoints += count;
+	}
+
+	public void SetInitialEnemyCount()
+	{
+		remainingEnemiesCount = FindObjectsOfType<BotMovement>().Length;
 	}
 }

@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  _hoodieMesh: {fileID: 4916182535985533389}
 --- !u!114 &-7143391629478468617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +388,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3897769583293948235}
     m_Modifications:
+    - target: {fileID: -9102045827460277364, guid: b5aef71ea1332524d90e9b7b2ef9a265, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b5aef71ea1332524d90e9b7b2ef9a265, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -443,9 +448,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7025860051252377853, guid: b5aef71ea1332524d90e9b7b2ef9a265, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b5aef71ea1332524d90e9b7b2ef9a265, type: 3}
       propertyPath: m_Name
       value: magic_staff01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5aef71ea1332524d90e9b7b2ef9a265, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853958071170612496, guid: b5aef71ea1332524d90e9b7b2ef9a265, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -570,6 +587,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0da6f6b588fc73499dafbff9039ccd3, type: 3}
+--- !u!23 &4916182535985533389 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 521825024802917897, guid: b0da6f6b588fc73499dafbff9039ccd3, type: 3}
+  m_PrefabInstance: {fileID: 4829034042276716484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4940050343696365615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0da6f6b588fc73499dafbff9039ccd3, type: 3}

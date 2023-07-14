@@ -22,6 +22,5 @@ public class GameManager : MonoBehaviour
 	public void AddPoints(int count)
 	{
 		playerPoints += count;
-		print(playerPoints);
 	}
 }

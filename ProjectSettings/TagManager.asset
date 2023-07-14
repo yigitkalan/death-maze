@@ -7,6 +7,7 @@ TagManager:
   - MovementJoystick
   - AimJoystick
   - Enemy
+  - PlayerGun
   layers:
   - Default
   - TransparentFX

@@ -20,9 +20,11 @@ public class GunController : MonoBehaviour
 	[SerializeField]
 	float bulletLife = 0.5f;
 	float nextTimeToFire = 0;
+	public bool canShoot = true;
 
 	public void Shoot()
 	{
+		print("ASDASD");
 		if (!CanShoot())
 		{
 			return;
@@ -36,10 +38,13 @@ public class GunController : MonoBehaviour
 	public bool CanShoot()
 	{
 		if (Time.time < nextTimeToFire)
-
+		{
+			canShoot = false;
 			return false;
+		}
 
 		nextTimeToFire = Time.time + 1f / fireRate;
+		canShoot = true;
 		return true;
 	}
 }

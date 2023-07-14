@@ -28,6 +28,9 @@ public class BotHealthManager : MonoBehaviour, ICanTakeDamage
 
 	public void Die()
 	{
+		// transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+		// transform.GetComponent<Rigidbody>().AddForce(-transform.forward * 5, ForceMode.Impulse);
+
 		GameManager.Instance.AddPoints(100);
 		GameManager.Instance.SetRemainingEnemies(GameManager.Instance.remainingEnemiesCount - 1);
 		Destroy(gameObject);

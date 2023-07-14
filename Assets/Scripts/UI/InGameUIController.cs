@@ -5,23 +5,55 @@ using UnityEngine.UIElements;
 
 public class InGameUIController : MonoBehaviour
 {
+	[Header("Pause Menu")]
+	[HideInInspector]
 	public Button resumeButton;
+
+	[HideInInspector]
 	public Button mainButton;
+
+	[Header("Player UI")]
+	[HideInInspector]
 	public Button pauseButton;
 
+	[HideInInspector]
 	public ProgressBar healthBar;
+
+	[Header("Death Menu")]
+	public Label score;
 
 	VisualElement root;
 	UIDocument uiDocument;
 
 	private void Start()
 	{
+		uiDocument = GetComponent<UIDocument>();
 		SetPlayerUI();
+	}
+
+	public void SetDeathUI()
+	{
+		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/DeathMenu");
+		root = uiDocument.rootVisualElement;
+		mainButton = root.Q<Button>("mainb");
+		mainButton.clicked += OnMainButtonClicked;
+		score = root.Q<Label>("scoreText");
+		score.text = "Your Score : " + GameManager.Instance.playerPoints.ToString();
+	}
+
+	public void SetCompleteMenu()
+	{
+		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/CompleteMenu");
+		root = uiDocument.rootVisualElement;
+		mainButton = root.Q<Button>("mainb");
+		mainButton.clicked += OnMainButtonClicked;
+		score = root.Q<Label>("scoreText");
+		score.text = "Your Score : " + GameManager.Instance.playerPoints.ToString();
 	}
 
 	void SetPlayerUI()
 	{
-		uiDocument = GetComponent<UIDocument>();
+		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/PlayerUI");
 		root = uiDocument.rootVisualElement;
 		pauseButton = root.Q<Button>("pauseb");
 		pauseButton.clicked += OpenPauseMenu;
@@ -30,6 +62,8 @@ public class InGameUIController : MonoBehaviour
 
 	void SetPauseMenuUI()
 	{
+		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/PauseMenu");
+		root = uiDocument.rootVisualElement;
 		mainButton = root.Q<Button>("mainb");
 		resumeButton = root.Q<Button>("resumeb");
 
@@ -46,16 +80,12 @@ public class InGameUIController : MonoBehaviour
 	void OpenPauseMenu()
 	{
 		Time.timeScale = 0;
-		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/PauseMenu");
-		root = uiDocument.rootVisualElement;
 		SetPauseMenuUI();
 	}
 
 	void OnResumeButtonClicked()
 	{
 		Time.timeScale = 1;
-		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/PlayerUI");
-		root = uiDocument.rootVisualElement;
 		SetPlayerUI();
 	}
 

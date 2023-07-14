@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/button.uss?fileID=7433441132597879392&amp;guid=710c27531af80a14ca605103e090301a&amp;type=3#button" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.88); -unity-background-image-tint-color: rgb(29, 28, 28); -unity-text-align: middle-center; justify-content: center; align-items: center;">
+        <ui:Label tabindex="-1" text="You have finished the game!!&#10;Congrats!!" display-tooltip-when-elided="true" name="congrats" style="font-size: 31px; color: rgb(255, 255, 255); margin-bottom: 25%; -unity-font-style: bold; flex-shrink: 1;" />
+        <ui:Label tabindex="-1" text="Score: " display-tooltip-when-elided="true" name="scoreText" style="font-size: 55px; color: rgb(255, 255, 255); margin-bottom: 25%;" />
+        <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="mainb" class="button" style="margin-top: 25px;" />
+    </ui:VisualElement>
+</ui:UXML>

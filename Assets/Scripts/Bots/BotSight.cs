@@ -72,8 +72,8 @@ public class BotSight : MonoBehaviour
 
 	private void OnDisable()
 	{
-		sightDisposable.Dispose();
 		lightTween.Kill();
+		sightDisposable.Dispose();
 	}
 
 	public bool CanSeePlayer()
@@ -106,6 +106,7 @@ public class BotSight : MonoBehaviour
 
 	public void ChangeLightColor(Color color)
 	{
+		lightTween.Kill();
 		lightTween = sightLight
 			.DOColor(color, initialTimeLeftToFocusPlayer)
 			.SetEase(Ease.InOutSine);

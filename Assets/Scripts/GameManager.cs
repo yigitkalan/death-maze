@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
 	public bool isPlayerDead = false;
 	public int remainingEnemiesCount { get; private set; }
+	public int playerPoints { get; private set; }
 	public static GameManager Instance { get; private set; }
 
 	private void Awake()
@@ -16,5 +17,11 @@ public class GameManager : MonoBehaviour
 	public void SetRemainingEnemies(int count)
 	{
 		remainingEnemiesCount = count;
+	}
+
+	public void AddPoints(int count)
+	{
+		playerPoints += count;
+		print(playerPoints);
 	}
 }

@@ -18,12 +18,12 @@ public class PlayerHealthManager : MonoBehaviour, ICanTakeDamage
 	{
 		GameManager.Instance.isPlayerDead = true;
 		Destroy(gameObject);
+		_inGameUIController.SetDeathUI();
 	}
 
 	public void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
-		print(currentHealth);
 		_inGameUIController.SetHealthBar((currentHealth / maxHealth) * 100);
 		if (currentHealth <= 0)
 		{

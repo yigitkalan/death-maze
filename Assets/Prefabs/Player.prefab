@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  _headMesh: {fileID: 5328176559317406749}
 --- !u!1 &2912607998293599925
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +316,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ef8684ff6314b4b48b9cd214d77ce4d5, type: 3}
   m_PrefabInstance: {fileID: 1294048022917188276}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &5328176559317406749 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -2881145375166832983, guid: ef8684ff6314b4b48b9cd214d77ce4d5, type: 3}
+  m_PrefabInstance: {fileID: 1294048022917188276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5280652434527175771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416,9 +422,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8378204976524305167, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5159845092984083632}
-    - targetCorrespondingSourceObject: {fileID: 8378204976524305167, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 822560390879133931}
   m_SourcePrefab: {fileID: 100100000, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
 --- !u!1 &4399445503946745684 stripped
@@ -426,22 +429,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8378204976524305167, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}
   m_PrefabInstance: {fileID: 5280652434527175771}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5159845092984083632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4399445503946745684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43aaffbc15734bc4ca962009a852e270, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerMovementInput: {fileID: 0}
-  _gunController: {fileID: 0}
-  _playerGun: {fileID: 0}
-  gunBackFire: -20
 --- !u!114 &822560390879133931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,8 +443,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovementInput: {fileID: 0}
   _gunController: {fileID: 0}
+  _cameraShake: {fileID: 0}
   _playerGun: {fileID: 0}
   gunBackFire: -40
+  playerBackFire: -10
+  playerBody: {fileID: 6615472150332541051}
 --- !u!4 &7137774891137124971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3046365306376490544, guid: 31f90c079a253954dbac1af81e03cccb, type: 3}

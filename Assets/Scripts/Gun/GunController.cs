@@ -24,7 +24,6 @@ public class GunController : MonoBehaviour
 
 	public void Shoot()
 	{
-		print("ASDASD");
 		if (!CanShoot())
 		{
 			return;

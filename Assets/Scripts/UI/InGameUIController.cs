@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -92,7 +93,9 @@ public class InGameUIController : MonoBehaviour
 	public void SetHealthBar(float currentHealth)
 	{
 		// print(currentHealth);
-		healthBar.value = currentHealth;
+		// healthBar.value = currentHealth;
+		DOTween.To(() => healthBar.value, x => healthBar.value = x, currentHealth, 0.2f);
+
 		//change health bar color
 		if (currentHealth >= 80)
 		{

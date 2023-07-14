@@ -1,5 +1,7 @@
 .unity-progress-bar {
     width: 20px;
-    height: 90px;
+    height: 60px;
     background-color: red;
+    background-image: none;
+    flex-shrink: 0;
 }

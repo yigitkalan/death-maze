@@ -54,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
 	void MovePlayerOnXZ()
 	{
 		movementVector = new Vector3(_playerInput.movementInput.x, 0, _playerInput.movementInput.y);
-
 		transform.Translate(movementVector * moveSpeed * Time.deltaTime, Space.World);
 	}
 

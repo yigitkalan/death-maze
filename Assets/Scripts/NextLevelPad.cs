@@ -14,7 +14,7 @@ public class NextLevelPad : MonoBehaviour
 	{
 		if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
 		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			_inGameUIController.AnimateLevelChange();
 		}
 		else
 		{

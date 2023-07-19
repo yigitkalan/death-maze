@@ -120,7 +120,7 @@ Transform:
   - {fileID: 2644465491977230354}
   - {fileID: 5629136478404941634}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2553963355523865242
 MeshFilter:
@@ -276,8 +276,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 425113d3132e98a47b0504cf5afb2f43, type: 2}
+  m_sharedMaterial: {fileID: -4363895726108987540, guid: 425113d3132e98a47b0504cf5afb2f43, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

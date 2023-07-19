@@ -19,6 +19,14 @@ public class LevelDoorManager : MonoBehaviour
 
 	Tween doorOpenTween;
 
+	[SerializeField]
+	InGameUIController inGameUIController;
+
+	private void Awake()
+	{
+		inGameUIController = FindAnyObjectByType<InGameUIController>();
+	}
+
 	private void Start()
 	{
 		UpdateDoorText();
@@ -57,6 +65,7 @@ public class LevelDoorManager : MonoBehaviour
 
 	void OpenDoor()
 	{
+		inGameUIController.SetLevelFinishUI();
 		doorOpenTween = transform.DOMoveY(doorOpenYPosition, doorOpenDelay);
 		Destroy(gameObject, doorOpenDelay);
 	}

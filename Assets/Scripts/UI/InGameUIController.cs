@@ -20,6 +20,8 @@ public class InGameUIController : MonoBehaviour
 	[HideInInspector]
 	public ProgressBar healthBar;
 
+	private Label levelFinishText;
+
 	[Header("Death Menu")]
 	public Label score;
 
@@ -52,9 +54,46 @@ public class InGameUIController : MonoBehaviour
 		score.text = "Your Score : " + GameManager.Instance.playerPoints.ToString();
 	}
 
-	void SetPlayerUI()
+	public void SetLevelFinishUI()
 	{
 		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/PlayerUI");
+		root = uiDocument.rootVisualElement;
+		levelFinishText = root.Q<Label>("levelf");
+
+		DOTween.To(
+			() => levelFinishText.style.opacity.value,
+			x => levelFinishText.style.opacity = x,
+			1f,
+			2f
+		);
+	}
+
+	public void AnimateLevelChange()
+	{
+		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/PlayerUI");
+		root = uiDocument.rootVisualElement;
+
+		var bg = root.Q<VisualElement>("bg");
+		DOTween
+			.To(
+				() => bg.style.backgroundColor.value,
+				x => bg.style.backgroundColor = x,
+				Color.black,
+				0.5f
+			)
+			.onComplete += () =>
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		};
+
+		//do this with dotween
+	}
+
+	void SetPlayerUI()
+	{
+		DOTween.To(() => root.style.opacity.value, x => root.style.opacity = x, 1f, 0.5f);
+		uiDocument.visualTreeAsset = Resources.Load<VisualTreeAsset>("UI/PlayerUI");
+
 		root = uiDocument.rootVisualElement;
 		pauseButton = root.Q<Button>("pauseb");
 		pauseButton.clicked += OpenPauseMenu;

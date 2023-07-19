@@ -28,15 +28,17 @@ public class BotHealthManager : MonoBehaviour, ICanTakeDamage
 
 	public void Die()
 	{
+		GetComponent<CapsuleCollider>().enabled = false;
 		GameManager.Instance.AddPoints(100);
 		GameManager.Instance.SetRemainingEnemies(GameManager.Instance.remainingEnemiesCount - 1);
-		transform.DOLocalRotate(new Vector3(-90, 0, 0), 1f);
+		transform.DORotate(new Vector3(-90, transform.rotation.eulerAngles.y, 0), 1f);
 		transform.DOMoveY(-1, 1f).OnComplete(() => Destroy(gameObject));
 	}
 
 	public void TakeDamage(int damage)
 	{
 		ApplyColorChangeToEnemy();
+
 		_cameraShake.ShakeCamera();
 		currentHealth -= damage;
 		if (currentHealth <= 0)

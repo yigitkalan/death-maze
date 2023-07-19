@@ -28,7 +28,7 @@ public class PlayerHealthManager : MonoBehaviour, ICanTakeDamage
 	{
 		GameManager.Instance.isPlayerDead = true;
 
-		transform.DOLocalRotate(new Vector3(-90, 0, 0), 1f);
+		transform.DORotate(new Vector3(-90, transform.rotation.eulerAngles.y, 0), 1f);
 		transform
 			.DOMoveY(-1, 1f)
 			.OnComplete(() =>

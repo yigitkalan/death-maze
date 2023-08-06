@@ -605,7 +605,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 70
+  field of view: 80
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -1321,6 +1321,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCam
       objectReference: {fileID: 0}
+    - target: {fileID: 2563762911843751095, guid: fd24e001e0604cd4e8c72658fa09d867, type: 3}
+      propertyPath: shakeTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563762911843751095, guid: fd24e001e0604cd4e8c72658fa09d867, type: 3}
+      propertyPath: shakeIntensity
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5409639313905256195, guid: fd24e001e0604cd4e8c72658fa09d867, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1373,6 +1381,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1452939441}
+    - target: {fileID: 5720813946496295033, guid: fd24e001e0604cd4e8c72658fa09d867, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

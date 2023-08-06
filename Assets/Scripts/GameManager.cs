@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
 			Destroy(this);
 		}
 	}
+    private void Start() {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+    }
 
 	public void SetRemainingEnemies(int count)
 	{

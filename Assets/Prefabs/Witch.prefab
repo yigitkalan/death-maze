@@ -38,7 +38,7 @@ Transform:
   - {fileID: 1576902932898550127}
   - {fileID: 2816795232109952533}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1551894337953754576
 CapsuleCollider:
@@ -98,10 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseSpeed: 2
-  lookDelay: 0.1
+  lookDelay: 0.2
   patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -125,6 +123,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   initialTimeLeftToFocusPlayer: 1
+  closeDistanceDetection: 4
 --- !u!114 &3491587978314528165
 MonoBehaviour:
   m_ObjectHideFlags: 0

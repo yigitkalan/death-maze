@@ -11,7 +11,7 @@ public class BotHealthManager : MonoBehaviour, ICanTakeDamage
 
 	[SerializeField]
 	int maxHealth = 2;
-	int currentHealth;
+	public int currentHealth{get; private set;}
 
 	Tween colorTween;
 

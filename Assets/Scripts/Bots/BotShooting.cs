@@ -15,15 +15,22 @@ public class BotShooting : MonoBehaviour
 
 	IDisposable shootDisposable;
 
+	BotHealthManager myBotHealthManager;
+
 	private void Start()
 	{
+		myBotHealthManager = GetComponent<BotHealthManager>();
 		_botSight = GetComponent<BotSight>();
 		_botMovement = GetComponent<BotMovement>();
 
 		shootDisposable = Observable
 			.EveryUpdate()
 			.Where(
-				_ => !GameManager.Instance.isPlayerDead && PlayerInRange() && !_botMovement.onPatrol
+				_ =>
+					!GameManager.Instance.isPlayerDead
+					&& PlayerInRange()
+					&& !_botMovement.onPatrol
+					&& !(myBotHealthManager.currentHealth == 0)
 			)
 			.Subscribe(_ => ShootPlayer());
 	}

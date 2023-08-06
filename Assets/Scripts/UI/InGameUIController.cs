@@ -60,6 +60,11 @@ public class InGameUIController : MonoBehaviour
 		root = uiDocument.rootVisualElement;
 		levelFinishText = root.Q<Label>("levelf");
 
+		root = uiDocument.rootVisualElement;
+		pauseButton = root.Q<Button>("pauseb");
+		pauseButton.clicked += OpenPauseMenu;
+		healthBar = root.Q<ProgressBar>("hbar");
+	
 		DOTween.To(
 			() => levelFinishText.style.opacity.value,
 			x => levelFinishText.style.opacity = x,
